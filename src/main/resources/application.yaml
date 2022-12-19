@@ -3,7 +3,9 @@ spring:
     gateway:
       routes:
         - id: hello-world
-          uri: https://httpbin.org/get
+          uri: https://httpbin.org
           predicates:
-            - Path=/hello 
+            - Path=/get
+          filters:
+            - SetPath=/hello
            
